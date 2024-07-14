@@ -1,12 +1,45 @@
-const question = "ゲーム市場、最も売れたゲーム機は次の内どれ？";
-const answers = [
-  "スーパーファミコン",
-  "プレイステーション2",
-  "ニンテンドースイッチ",
-  "ニンテンドーDS",
+const quiz = [
+  {
+    question: "ゲーム市場、最も売れたゲーム機は次の内どれ？",
+    answers: [
+      "スーパーファミコン",
+      "プレイステーション2",
+      "ニンテンドースイッチ",
+      "ニンテンドーDS",
+    ],
+    correct: "ニンテンドーDS",
+  },
+  {
+    question: "ゲーム市場、最も売れたゲーム機は次の内どれ？",
+    answers: [
+      "スーパーファミコン",
+      "プレイステーション2",
+      "ニンテンドースイッチ",
+      "ニンテンドーDS",
+    ],
+    correct: "ニンテンドーDS",
+  },
+  {
+    question: "ゲーム市場、最も売れたゲーム機は次の内どれ？",
+    answers: [
+      "スーパーファミコン",
+      "プレイステーション2",
+      "ニンテンドースイッチ",
+      "ニンテンドーDS",
+    ],
+    correct: "ニンテンドーDS",
+  },
 ];
 
-const correct = "ニンテンドーDS";
+// const question = "ゲーム市場、最も売れたゲーム機は次の内どれ？";
+// const answers = [
+//   "スーパーファミコン",
+//   "プレイステーション2",
+//   "ニンテンドースイッチ",
+//   "ニンテンドーDS",
+// ];
+
+// const correct = "ニンテンドーDS";
 
 const $button = document.getElementsByTagName("button");
 const buttonLength = $button.length;
@@ -16,20 +49,20 @@ const setupQuiz = () => {
   let buttonIndex = 0;
   // let buttonLength = $button.length;
   while (buttonIndex < buttonLength) {
-    $button[buttonIndex].textContent = answers[buttonIndex];
+    $button[buttonIndex].textContent = quiz[0].answers[buttonIndex];
     buttonIndex++;
   }
 };
 
 setupQuiz();
 
-document.getElementById("js-question").textContent = question;
+document.getElementById("js-question").textContent = quiz[0].question;
 // for (let i = 0; i < 5; i++) {
 //   document.getElementsByTagName("button")[i].textContent = answers[i];
 // }
 
 const clickHandler = (e) => {
-  if (correct === e.target.textContent) {
+  if (quiz[0].correct === e.target.textContent) {
     window.alert("正解!");
   } else {
     window.alert("不正解!");

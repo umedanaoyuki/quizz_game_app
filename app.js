@@ -8,4 +8,8 @@ const answers = [
 
 const correct = "ニンテンドーDS";
 
-document.getElementById("js-question").textContent = question
+document.getElementById("js-question").textContent = question;
+
+for (let i = 0; i < 5; i++) {
+  document.getElementsByTagName('button')[i].textContent = answers[i];
+}

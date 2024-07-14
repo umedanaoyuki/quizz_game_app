@@ -8,20 +8,24 @@ const answers = [
 
 const correct = "ニンテンドーDS";
 
-// 定数の文字列をHTMLに反映させる
+const $button = document.getElementsByTagName("button");
+
+// クイズの問題文、選択肢を定義
+const setupQuiz = () => {
+  let buttonIndex = 0;
+  let buttonLength = $button.length;
+  while (buttonIndex < buttonLength) {
+    $button[buttonIndex].textContent = answers[buttonIndex];
+    buttonIndex++;
+  }
+};
+
+setupQuiz();
+
 document.getElementById("js-question").textContent = question;
 // for (let i = 0; i < 5; i++) {
 //   document.getElementsByTagName("button")[i].textContent = answers[i];
 // }
-
-const $button = document.getElementsByTagName("button");
-
-let buttonIndex = 0;
-let buttonLength = $button.length;
-while (buttonIndex < buttonLength) {
-  $button[buttonIndex].textContent = answers[buttonIndex];
-  buttonIndex++;
-}
 
 // ボタンをクリックしたら正誤判定
 $button[0].addEventListener("click", () => {

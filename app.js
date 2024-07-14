@@ -28,6 +28,7 @@ const quiz = [
 
 const quizLength = quiz.length;
 let quizIndex = 0;
+let score = 0;
 
 const $button = document.getElementsByTagName("button");
 const buttonLength = $button.length;
@@ -49,6 +50,7 @@ document.getElementById("js-question").textContent = quiz[quizIndex].question;
 const clickHandler = (e) => {
   if (quiz[quizIndex].correct === e.target.textContent) {
     window.alert("正解!");
+    score++;
   } else {
     window.alert("不正解!");
   }
@@ -60,7 +62,9 @@ const clickHandler = (e) => {
     setupQuiz();
   } else {
     // 問題数がもうなければこちらを実行
-    window.alert("終了");
+    window.alert(
+      "終了! あなたの正解数は" + score + "/" + quizLength + "です。"
+    );
   }
 };
 
@@ -73,19 +77,3 @@ while (handlerIndex < buttonLength) {
   });
   handlerIndex++;
 }
-
-// $button[0].addEventListener("click", (e) => {
-//   clickHandler(e);
-// });
-
-// $button[1].addEventListener("click", (e) => {
-//   clickHandler(e);
-// });
-
-// $button[2].addEventListener("click", (e) => {
-//   clickHandler(e);
-// });
-
-// $button[3].addEventListener("click", (e) => {
-//   clickHandler(e);
-// });
